@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: pruebamodulo_v_production
-  username: pruebamodulo_v
-  password: <%= ENV["PRUEBAMODULO_V_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
