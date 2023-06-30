@@ -1,10 +1,10 @@
-<h1>Editing tweet</h1>
-
+<h1>Editando este Tweet</h1>
+<div class="bg-color text-center col-3">
 <%= render "form", tweet: @tweet %>
-
+</div>
 <br>
 
 <div>
-  <%= link_to "Show this tweet", @tweet %> |
-  <%= link_to "Back to tweets", tweets_path %>
+  <%= link_to "Mostrar este tweet", @tweet,class:"btn btn-primary" %> |
+  <%= link_to "Volver a tweets", tweets_path, class:"btn btn-primary" %>
 </div>

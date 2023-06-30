@@ -1,24 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tweets</h1>
+<div>
+<i class="fa-solid fa-kiwi-bird fa-2xl" style="color: #ffffff;"></i>
+<h1 class="pt-2"><i class="fa-solid fa-house-user" style="color: #ffffff;"></i> Inicio</h1>
 
-<br><br>
+
+<br>
+<%= link_to "Twittear", new_tweet_path, class:"btn btn-primary btn-lg" %>
+
+<br>
+
+<br>
+
 <%= form_with url: tweets_path, method: :get do |form| %>
-<%= form.text_field :query_text, placeholder: ('Busqueda'), value: params[:query_text] %>
+<%= form.text_field :query_text, placeholder: ('Busqueda Tweets por ID'), value: params[:query_text] %>
 <% end %>
+
 <br><br>
 
+<div class="container-fluid">
 <div id="tweets">
   <% @tweets.each do |tweet| %>
     <%= render tweet %>
-    <p>
-      <%= link_to "Show this tweet", tweet %>
+        <p>
+      <%= link_to "Mostrar este tweet", tweet, class:"btn btn-dark"  %>
     </p>
   <% end %>
 </div>
-
-<br><br>
+</div>
+</div>
+<br>
 <%= raw pagy_nav(@pagy) %>
-<br><br>
+<br>
 
-<%= link_to "Tuuiitteear", new_tweet_path, class:"btn btn-primary" %>
