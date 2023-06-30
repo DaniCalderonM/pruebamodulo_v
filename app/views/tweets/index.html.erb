@@ -2,6 +2,12 @@
 
 <h1>Tweets</h1>
 
+<br><br>
+<%= form_with url: tweets_path, method: :get do |form| %>
+<%= form.text_field :query_text, placeholder: ('Busqueda'), value: params[:query_text] %>
+<% end %>
+<br><br>
+
 <div id="tweets">
   <% @tweets.each do |tweet| %>
     <%= render tweet %>
@@ -10,5 +16,9 @@
     </p>
   <% end %>
 </div>
+
+<br><br>
+<%= raw pagy_nav(@pagy) %>
+<br><br>
 
 <%= link_to "New tweet", new_tweet_path %>
